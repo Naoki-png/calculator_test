@@ -8,6 +8,7 @@ import com.example.calculator_galapagos.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private var firstNumber: Float? = null
     private var selectedCalcType = CalcType.EQUAL
     private var lastPressedButtonType = ButtonType.NONE
 
@@ -44,6 +45,22 @@ class MainActivity : AppCompatActivity() {
 
     private fun initNumberButton(numberButton: TextView) {
         numberButton.setOnClickListener {
+            when (lastPressedButtonType) {
+                ButtonType.NONE -> {
+                    binding.output.text = ""
+                    binding.output.text = (it as TextView).text
+                }
+                ButtonType.CALC -> {
+                    firstNumber = binding.output.text.toString().toFloat()
+                    binding.output.text = ""
+                    binding.output.text = (it as TextView).text
+                }
+                ButtonType.NUMBER -> {
+                    binding.output.apply {
+                        text = StringBuilder().append(text).append((it as TextView).text)
+                    }
+                }
+            }
             lastPressedButtonType = ButtonType.NUMBER
         }
     }
