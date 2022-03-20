@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.TextView
+import android.widget.Toast
 import com.example.calculator_galapagos.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -83,6 +84,22 @@ class MainActivity : AppCompatActivity() {
 
             lastPressedButtonType = ButtonType.CALC
         }
+    }
+
+    private fun calculate(calcType: CalcType) {
+        var result = 0f
+        when (calcType) {
+            CalcType.PLUS -> result = firstNumber!! + binding.output.text.toString().toFloat()
+            CalcType.MINUS -> result = firstNumber!! - binding.output.text.toString().toFloat()
+            CalcType.MULTIPLY -> result = firstNumber!! * binding.output.text.toString().toFloat()
+            CalcType.DIVIDE -> result = firstNumber!! / binding.output.text.toString().toFloat()
+            else -> {
+                // 処理なし
+            }
+        }
+        binding.output.text = if (result.rem(1) == 0f) result.toInt().toString() else result.toString()
+        clear()
+        Toast.makeText(this, "計算終了", Toast.LENGTH_SHORT).show()
     }
 
     private fun initAllClearButton() {
