@@ -9,6 +9,7 @@ import com.example.calculator_galapagos.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private var selectedCalcType = CalcType.EQUAL
+    private var lastPressedButtonType = ButtonType.NONE
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +49,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initAllClearButton() {
+    }
+
+    private enum class ButtonType {
+        CALC, NUMBER, NONE
     }
 
     private enum class CalcType {
