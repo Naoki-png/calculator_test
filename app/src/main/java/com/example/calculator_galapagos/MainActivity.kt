@@ -103,6 +103,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initAllClearButton() {
+        binding.allClear.setOnClickListener {
+            binding.output.text = "0"
+            clear()
+            Toast.makeText(this, "クリアしました", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun clear() {
