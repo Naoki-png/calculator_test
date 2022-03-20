@@ -67,6 +67,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun initCalcButton(calcButton: TextView) {
         calcButton.setOnClickListener {
+            when (calcButton.text) {
+                "+" -> selectedCalcType = CalcType.PLUS
+                "-" -> selectedCalcType = CalcType.MINUS
+                "*" -> selectedCalcType = CalcType.MULTIPLY
+                "/" -> selectedCalcType = CalcType.DIVIDE
+            }
+
             lastPressedButtonType = ButtonType.CALC
         }
     }
