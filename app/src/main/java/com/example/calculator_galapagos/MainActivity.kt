@@ -105,6 +105,12 @@ class MainActivity : AppCompatActivity() {
     private fun initAllClearButton() {
     }
 
+    private fun clear() {
+        firstNumber = null
+        selectedCalcType = CalcType.EQUAL
+        lastPressedButtonType = ButtonType.NONE
+    }
+
     private enum class ButtonType {
         CALC, NUMBER, NONE
     }
