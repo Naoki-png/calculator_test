@@ -72,6 +72,13 @@ class MainActivity : AppCompatActivity() {
                 "-" -> selectedCalcType = CalcType.MINUS
                 "*" -> selectedCalcType = CalcType.MULTIPLY
                 "/" -> selectedCalcType = CalcType.DIVIDE
+                "=" -> {
+                    if (firstNumber == null ||
+                        selectedCalcType == CalcType.EQUAL) {
+                        return@setOnClickListener
+                    }
+                    calculate(selectedCalcType)
+                }
             }
 
             lastPressedButtonType = ButtonType.CALC
