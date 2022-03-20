@@ -18,4 +18,7 @@
     <string name="divide">/</string>
     <string name="equal">=</string>
     <string name="all_clear">AC</string>
+
+    <string name="toast_finish">計算終了</string>
+    <string name="toast_clear">クリアしました</string>
 </resources>

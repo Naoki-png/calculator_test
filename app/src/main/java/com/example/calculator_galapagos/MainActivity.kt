@@ -99,14 +99,14 @@ class MainActivity : AppCompatActivity() {
         }
         binding.output.text = if (result.rem(1) == 0f) result.toInt().toString() else result.toString()
         clear()
-        Toast.makeText(this, "計算終了", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, R.string.toast_finish, Toast.LENGTH_SHORT).show()
     }
 
     private fun initAllClearButton() {
         binding.allClear.setOnClickListener {
             binding.output.text = "0"
             clear()
-            Toast.makeText(this, "クリアしました", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.toast_clear, Toast.LENGTH_SHORT).show()
         }
     }
 
