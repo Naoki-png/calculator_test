@@ -43,6 +43,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initNumberButton(numberButton: TextView) {
+        numberButton.setOnClickListener {
+            lastPressedButtonType = ButtonType.NUMBER
+        }
     }
 
     private fun initCalcButton(calcButton: TextView) {
