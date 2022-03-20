@@ -48,12 +48,10 @@ class MainActivity : AppCompatActivity() {
         numberButton.setOnClickListener {
             when (lastPressedButtonType) {
                 ButtonType.NONE -> {
-                    binding.output.text = ""
                     binding.output.text = (it as TextView).text
                 }
                 ButtonType.CALC -> {
                     firstNumber = binding.output.text.toString().toFloat()
-                    binding.output.text = ""
                     binding.output.text = (it as TextView).text
                 }
                 ButtonType.NUMBER -> {
