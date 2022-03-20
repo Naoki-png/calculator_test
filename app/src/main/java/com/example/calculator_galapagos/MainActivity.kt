@@ -66,6 +66,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initCalcButton(calcButton: TextView) {
+        calcButton.setOnClickListener {
+            lastPressedButtonType = ButtonType.CALC
+        }
     }
 
     private fun initAllClearButton() {
