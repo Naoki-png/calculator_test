@@ -97,8 +97,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
         binding.output.text = if (result.rem(1) == 0f) result.toInt().toString() else result.toString()
+        Toast.makeText(this, getString(R.string.toast_finish, "${firstNumber?.toInt()} ${calcType.operator} ${secondNumber.toInt()}"), Toast.LENGTH_SHORT).show()
         clear()
-        Toast.makeText(this, R.string.toast_finish, Toast.LENGTH_SHORT).show()
     }
 
     private fun initAllClearButton() {
@@ -119,7 +119,7 @@ class MainActivity : AppCompatActivity() {
         CALC, NUMBER, NONE
     }
 
-    private enum class CalcType {
-        PLUS, MINUS, MULTIPLY, DIVIDE, EQUAL
+    private enum class CalcType(val operator: String) {
+        PLUS("+"), MINUS("-"), MULTIPLY("*"), DIVIDE("/"), EQUAL("=")
     }
 }

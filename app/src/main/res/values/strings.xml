@@ -19,6 +19,6 @@
     <string name="equal">=</string>
     <string name="all_clear">AC</string>
 
-    <string name="toast_finish">計算終了</string>
+    <string name="toast_finish"> %s の結果を表示しました。</string>
     <string name="toast_clear">クリアしました</string>
 </resources>
