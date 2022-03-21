@@ -86,11 +86,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun calculate(calcType: CalcType) {
         var result = 0f
+        val secondNumber = binding.output.text.toString().toFloat()
         when (calcType) {
-            CalcType.PLUS -> result = firstNumber!! + binding.output.text.toString().toFloat()
-            CalcType.MINUS -> result = firstNumber!! - binding.output.text.toString().toFloat()
-            CalcType.MULTIPLY -> result = firstNumber!! * binding.output.text.toString().toFloat()
-            CalcType.DIVIDE -> result = firstNumber!! / binding.output.text.toString().toFloat()
+            CalcType.PLUS -> result = firstNumber!! + secondNumber
+            CalcType.MINUS -> result = firstNumber!! - secondNumber
+            CalcType.MULTIPLY -> result = firstNumber!! * secondNumber
+            CalcType.DIVIDE -> result = firstNumber!! / secondNumber
             else -> {
                 // 処理なし
             }
